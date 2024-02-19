@@ -1,7 +1,9 @@
 import React from "react";
-import "./styles.css";
 
-export default function App() {
+import "./styles.css";
+import "./App.css";
+
+export default function Footer() {
   return (
     <div className="Footer">
       <footer>

@@ -1,11 +1,18 @@
-body {
+.App {
   font-family: "Roboto", sans-serif;
   background: url("https://source.unsplash.com/bR_-gllg7Bs");
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 800px;
+  margin: 45px auto;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-a {
+.Footer a {
   color: rgb(255, 255, 255);
 }
 
@@ -14,18 +21,8 @@ a:hover {
   font-weight: bold;
 }
 
-.weather-app {
-  max-width: 600px;
-  margin: 45px auto;
-  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
-  border-radius: 16px;
-  padding: 30px;
-  background: linear-gradient(135deg, rgb(214, 214, 185), rgba(255, 255, 0, 0));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
 
-header {
+.Header {
   border-bottom: 1px solid #f9f7fe54;
   padding: 0 0 30px 0;
 }
@@ -34,9 +31,10 @@ header {
   background-color: #ecebef;
   border: none;
   border-radius: 6px;
-  width: 80%;
+  width: 30%;
   font-size: 16px;
   padding: 15px 20px;
+  margin: 0 auto;
 }
 
 .search-form-button {
@@ -47,10 +45,11 @@ header {
   margin-left: 5px;
   border-radius: 6px;
   color: white;
+   
 }
 
 main {
-  padding: 30px 0;
+
 }
 
 .weather-app-data {
@@ -65,6 +64,8 @@ main {
 }
 
 .weather-app-details {
+  text-decoration: none;
+  list-style: none;
   font-size: 16px;
   color: rgba(39, 33, 66, 0.862);
   line-height: 24px;
