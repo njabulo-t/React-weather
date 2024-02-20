@@ -1,27 +1,25 @@
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
 
 import "./styles.css";
 import "./App.css";
 
-export default function Weather() {
-const [city, setCity] = useState(props.defaultCity);
-const [loaded, setLoaded] = useState(false);
-const [weather, setWeather] = useState({});
+export default function Weather(props) {
+const [city, setCity] = useState(props.defaultCity);;
+const [weather, setWeather] = useState({ ready: false });
 
 function displayWeather(response) {
-  setLoaded(true);
   setWeather({
     ready: true,
     city: response.data.name,
+    coordinates: response.data.coord,
     temperature: response.data.main.temp,
     wind: response.data.wind.speed,
     humidity: response.data.main.humidity,
     date: new Date(response.data.dt * 1000),
     description: response.data.weather[0].description,
-    icon: `http://openweathermap.org/img/wn/${
-      response.data.weather[0].icon}@2x.png`,
-    description: response.data.weather[0].description
+    icon: response.data.weather[0].icon,
   });
 }
 
@@ -35,25 +33,14 @@ function handleCityChange(event) {
 }
 
 function search() {
-  const apiKey = "f8e6a9e3d6fde87cb38868da460b1371";
+  const apiKey = "6bfa54f242cbb59343d4e58db578dc61";
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
 
-function updateCity(event) {
-  setCity(event.target.value);
-}
-
-let form = (
-  <form  onSubmit={handleSubmit}>
-    <input className="search-form-input" type="search" placeholder="Enter a city.." onChange={updateCity} />
-    <button className="search-form-button" type="Submit">Search</button>
-  </form>
-);
-
-if (loaded) {
+if (weather.ready) {
   return (
-    <div className="weather-app-details">
+    <div className="Weather">
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-9">
@@ -64,7 +51,7 @@ if (loaded) {
             onChange={handleCityChange}
             />
           </div>
-          <div className="cole-3">
+          <div className="col-3">
             <input
             type="submit"
             value="Search"
@@ -73,9 +60,12 @@ if (loaded) {
           </div>
         </div>
       </form>
+      <WeatherInfo data={weather} />
+  
     </div>
   );
 } else {
-  return form;
+  search();
+  return "Loading....";
 }
 }
