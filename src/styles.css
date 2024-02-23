@@ -1,3 +1,4 @@
+
 .App {
   font-family: "Roboto", sans-serif;
   background: url("https://source.unsplash.com/bR_-gllg7Bs");
@@ -74,7 +75,7 @@ a:hover {
   margin-left: 5px;
   font-weight: 400;
   margin-left: 10px;
-  color: rgb(33, 33, 33);
+
  
 }
 
@@ -98,20 +99,16 @@ a:hover {
   font-weight: 600;
   position: relative;
   line-height: 1;
-  top: -20px;
-
-  
+  top: -20px;  
 }
 
-.weather-app-details {
-  text-decoration: none;
-  list-style: none;
-  font-size: 8px;
-  color: rgba(39, 33, 66, 0.862);
-  line-height: 24px;
-  font-weight: 500;
+.WeatherForecast-day{
+   color: #e2e4e8;
 }
 
+.WeatherForecast-temperature-min{
+  color: #e2e4e8;
+}
 
 .App footer {
 
