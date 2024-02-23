@@ -13,11 +13,11 @@ export default function Footer() {
             Njabulo
           </a>{" "}
           and is {""}
-          <a href="https://github.com/njabulo-t/my-weather-app" target="_blank">
+          <a href="https://github.com/njabulo-t/React-weather" target="_blank">
             open sourced on GitHub
           </a>{" "}
           and {""}
-          <a href="https://icode-weatherapp.netlify.app/" target="_blank">
+          <a href="https://reactweather01.netlify.app/" target="_blank">
             hosted in Netlify
           </a>
         </p>
